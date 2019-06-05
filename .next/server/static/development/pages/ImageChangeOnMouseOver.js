@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -158,12 +158,20 @@ var _jsxFileName = "C:\\Users\\HIS20144\\Desktop\\UsingReactHooks\\src\\ImageTog
 var ImageTogglerOnMouseOver = function ImageTogglerOnMouseOver(_ref) {
   var primaryImg = _ref.primaryImg,
       secondaryImg = _ref.secondaryImg;
+  var imageRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    onMouseOver: function onMouseOver() {
+      imageRef.current.src = secondaryImg;
+    },
+    onMouseOut: function onMouseOut() {
+      imageRef.current.src = primaryImg;
+    },
     src: primaryImg,
     alt: "",
+    ref: imageRef,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 8
     },
     __self: this
   });
@@ -173,7 +181,7 @@ var ImageTogglerOnMouseOver = function ImageTogglerOnMouseOver(_ref) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!***********************************************!*\
   !*** multi ./pages/ImageChangeOnMouseOver.js ***!
   \***********************************************/

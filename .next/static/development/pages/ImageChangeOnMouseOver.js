@@ -99,12 +99,20 @@ var _jsxFileName = "C:\\Users\\HIS20144\\Desktop\\UsingReactHooks\\src\\ImageTog
 var ImageTogglerOnMouseOver = function ImageTogglerOnMouseOver(_ref) {
   var primaryImg = _ref.primaryImg,
       secondaryImg = _ref.secondaryImg;
+  var imageRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    onMouseOver: function onMouseOver() {
+      imageRef.current.src = secondaryImg;
+    },
+    onMouseOut: function onMouseOut() {
+      imageRef.current.src = primaryImg;
+    },
     src: primaryImg,
     alt: "",
+    ref: imageRef,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 8
     },
     __self: this
   });
